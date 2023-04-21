@@ -7,10 +7,13 @@ import "./style/app.css";
 import DesignSearh from "./component/DesignSearh";
 import DesignBackground from "./component/DesignBackground";
 import Loading from "./component/Loading";
+import DesignBuscador from "./component/DesignBuscador";
+import { DesignFilterCard } from "./component/DesignFilterCard";
 
 function App() {
   const [index, setIndex] = useState(getRandom());
   const [load, setLoad] = useState(true);
+  const [searhData, setSearhData] = useState()
 
   const url = `https://rickandmortyapi.com/api/location/${index}`;
 
@@ -23,6 +26,9 @@ function App() {
         setLoad(datas ? false : true );
     
   }, [datas]);
+
+
+
 
   return (
     <section className="App">
@@ -45,11 +51,31 @@ function App() {
 
           <DesignSearh setIndex={setIndex} endError={endError} />
 
+          <DesignBuscador buscar={datas} setSearhData={setSearhData} />
+
           {/* Design cards  */}
           <header className="header">
-            {datas?.residents.map((element) => (
+
+            {
+                searhData ?
+                <>
+                    {searhData?.map(element => (
+                            <DesignFilterCard key={element.id} element={element} />
+                          ))}
+
+                </>
+                :
+                
+                <>
+                {datas?.residents.map((element) => (
               <DesignCards key={element} url={element} />
             ))}
+                </>
+            }
+
+            
+
+
           </header>
         </>
       )}

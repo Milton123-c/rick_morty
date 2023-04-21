@@ -1,0 +1,34 @@
+
+.prin{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+   
+}
+
+.form__column{
+    z-index: 9999;
+}
+
+.form__ul{
+    background-color: #ffffff;
+    color: black;
+    position: absolute;
+    top: 1.8em;
+    left: 0;
+    padding: 0.3em 1em;
+    z-index: 9;
+}
+
+.form__ul li > button{
+    margin-bottom: 0.3em;
+    border: none;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.form__ul li > button:hover{
+    background-color: #062226;
+    color: #fff;
+}

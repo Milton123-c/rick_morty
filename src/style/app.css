@@ -91,6 +91,7 @@
     overflow-y: auto;
     padding: 0 1em;
     padding-bottom: 1em;
+ 
     
 }
 
@@ -268,10 +269,12 @@ hr {
 
 @media (min-width: 768px) {
     .header{
+        width: min-content;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
         justify-items: center;
         gap: 2em;
+       
     }
 
     .location{
@@ -300,6 +303,7 @@ hr {
         justify-content: center;
         justify-items: center;
         gap: 1.5em;
+     
        
     }
 

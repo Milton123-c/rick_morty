@@ -9,8 +9,17 @@ const DesignSearh = ({setIndex, endError}) => {
     const handleSearch = (e) => {
         e.preventDefault()
         
+
         const values = search.current.value;
+        console.log(values);
+        
+        if(values){
             setIndex(values)
+            
+        }else{
+            setIndex()
+            seterrors(true)
+        }
         
     }
 
